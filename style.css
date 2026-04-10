@@ -1,7 +1,7 @@
 /* ============================================================
    ARIANE ARCHANJO — PORTFOLIO
-   style.css  |  ariarch.dev — identidade v2
-   Paleta: Cyan #00d4e8 · Violet #a855f7 · Green #22d970
+   style.css  |  ariarch.dev — identidade v2 (red edition)
+   Paleta: Red #e8192c · Crimson #b0121e · Accent #ff4d5e
    Fundos: #0e1117 / #131720 / #171d29
    Tipografia: Syne (títulos) · Space Mono (labels/tags)
    ============================================================ */
@@ -10,15 +10,15 @@
    1. VARIÁVEIS & RESET
    ────────────────────────────────────────────── */
 :root {
-  /* Paleta principal */
-  --cyan:        #00d4e8;
-  --cyan-dim:    rgba(0, 212, 232, 0.08);
-  --cyan-bd:     rgba(0, 212, 232, 0.22);
-  --cyan-glow:   rgba(0, 212, 232, 0.28);
-  --violet:      #a855f7;
-  --violet-dim:  rgba(168, 85, 247, 0.08);
-  --violet-bd:   rgba(168, 85, 247, 0.22);
-  --green:       #22d970;
+  /* Paleta principal — vermelho */
+  --cyan:        #e8192c;
+  --cyan-dim:    rgba(232, 25, 44, 0.08);
+  --cyan-bd:     rgba(232, 25, 44, 0.28);
+  --cyan-glow:   rgba(232, 25, 44, 0.32);
+  --violet:      #ff6b7a;
+  --violet-dim:  rgba(255, 107, 122, 0.08);
+  --violet-bd:   rgba(255, 107, 122, 0.22);
+  --green:       #ff4d5e;
 
   /* Fundos dark (padrão) */
   --bg:          #0e1117;
@@ -47,8 +47,6 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light mode — mantém fundos escuros como regra do kit,
-   apenas suaviza levemente para quem preferir */
 [data-theme="light"] {
   --bg:        #f0f2f8;
   --bg-2:      #e4e8f2;
@@ -60,7 +58,7 @@
   --text-muted:#5a6a7e;
   --text-mute: #8fa0b5;
   --text-head: #0e1117;
-  --cyan-glow: rgba(0, 212, 232, 0.18);
+  --cyan-glow: rgba(232, 25, 44, 0.18);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,7 +78,6 @@ body {
   transition: background 0.4s var(--ease), color 0.4s var(--ease);
 }
 
-/* Grade global de fundo (textura do kit) */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -99,7 +96,7 @@ body::before {
     linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
 }
 
-::selection { background: var(--cyan); color: var(--bg); }
+::selection { background: var(--cyan); color: #fff; }
 
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -125,7 +122,7 @@ img { display: block; max-width: 100%; }
 
 .cursor-follower {
   width: 32px; height: 32px;
-  border: 1.5px solid rgba(0, 212, 232, 0.45);
+  border: 1.5px solid rgba(232, 25, 44, 0.45);
   transition: transform 0.12s var(--ease), width 0.3s, height 0.3s, border-color 0.3s;
 }
 
@@ -160,7 +157,6 @@ img { display: block; max-width: 100%; }
 
 .section { padding: var(--section-gap) 0; }
 
-/* Label de seção: Space Mono com linha decorativa */
 .section-label {
   display: inline-flex;
   align-items: center;
@@ -175,7 +171,6 @@ img { display: block; max-width: 100%; }
 
 .section-label span { color: var(--text-mute); }
 
-/* Linha decorativa após o label */
 .section-label::after {
   content: '';
   display: block;
@@ -223,10 +218,10 @@ img { display: block; max-width: 100%; }
 
 .btn-primary {
   background: var(--cyan);
-  color: var(--bg);
+  color: #fff;
 }
 .btn-primary:hover {
-  background: #00bee8;
+  background: #c8111f;
   transform: translateY(-2px);
   box-shadow: 0 8px 28px var(--cyan-glow);
 }
@@ -292,7 +287,6 @@ img { display: block; max-width: 100%; }
   position: relative; z-index: 1;
 }
 
-/* Logo: ariarch.dev style */
 .nav-logo {
   font-family: var(--font-head);
   font-weight: 800;
@@ -410,19 +404,18 @@ img { display: block; max-width: 100%; }
   padding: 8rem 1.5rem 5rem;
 }
 
-/* Grade de fundo — via body::before, sem duplicar */
 .hero-bg-grid {
-  display: none; /* substituído pelo body::before global */
+  display: none;
 }
 
-/* Glow cyan */
+/* Glow vermelho */
 .hero-glow {
   position: absolute;
   top: -20%;
   left: 50%;
   transform: translateX(-50%);
   width: 800px; height: 600px;
-  background: radial-gradient(ellipse, rgba(0,212,232,0.1) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(232,25,44,0.1) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -434,7 +427,6 @@ img { display: block; max-width: 100%; }
   z-index: 1;
 }
 
-/* Badge disponibilidade */
 .hero-tag {
   display: inline-flex;
   align-items: center;
@@ -454,16 +446,15 @@ img { display: block; max-width: 100%; }
 .dot {
   width: 7px; height: 7px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--cyan);
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
 @keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 217, 112, 0.5); }
-  50%       { box-shadow: 0 0 0 6px rgba(34, 217, 112, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 25, 44, 0.5); }
+  50%       { box-shadow: 0 0 0 6px rgba(232, 25, 44, 0); }
 }
 
-/* Nome */
 .hero-name {
   font-family: var(--font-head);
   font-size: clamp(2.4rem, 6vw, 4.5rem);
@@ -477,7 +468,6 @@ img { display: block; max-width: 100%; }
 .hero-name .line { display: block; }
 .hero-name .accent { color: var(--cyan); }
 
-/* Typed */
 .hero-title {
   font-family: var(--font-body);
   font-size: clamp(0.78rem, 2vw, 0.92rem);
@@ -495,7 +485,6 @@ img { display: block; max-width: 100%; }
 
 @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:0; } }
 
-/* Descrição */
 .hero-desc {
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -505,7 +494,6 @@ img { display: block; max-width: 100%; }
   line-height: 1.9;
 }
 
-/* CTA */
 .hero-cta {
   display: flex;
   justify-content: center;
@@ -514,7 +502,6 @@ img { display: block; max-width: 100%; }
   margin-bottom: 3.5rem;
 }
 
-/* Stats */
 .hero-stats {
   display: flex;
   justify-content: center;
@@ -578,7 +565,6 @@ img { display: block; max-width: 100%; }
 
 .about-body { margin-bottom: 2rem; }
 
-/* Card de info */
 .about-card-wrap { position: relative; }
 
 .about-card {
@@ -592,7 +578,6 @@ img { display: block; max-width: 100%; }
 
 .about-card:hover { border-color: var(--cyan-bd); }
 
-/* Linha topo cyan (topbar do kit) */
 .card-line {
   height: 2px;
   background: var(--cyan);
@@ -638,7 +623,6 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 
-/* Linha topo cyan nos cards */
 .skill-group::before {
   content: '';
   position: absolute;
@@ -703,12 +687,11 @@ img { display: block; max-width: 100%; }
 .skill-fill {
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, var(--violet), var(--cyan));
+  background: linear-gradient(90deg, #b0121e, var(--cyan));
   border-radius: 99px;
   transition: width 1s var(--ease);
 }
 
-/* Tags de competências */
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -727,7 +710,7 @@ img { display: block; max-width: 100%; }
   transition: background 0.2s;
 }
 
-.tag:hover { background: rgba(0, 212, 232, 0.15); }
+.tag:hover { background: rgba(232, 25, 44, 0.15); }
 
 /* ──────────────────────────────────────────────
    11. PROJETOS
@@ -752,7 +735,6 @@ img { display: block; max-width: 100%; }
   transition: border-color 0.3s, transform 0.3s var(--ease), box-shadow 0.3s;
 }
 
-/* Linha topo no hover */
 .project-card::before {
   content: '';
   position: absolute;
@@ -832,7 +814,6 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.06em;
 }
 
-/* Badge privado */
 .project-badge-private {
   display: inline-flex;
   align-items: center;
@@ -983,7 +964,6 @@ img { display: block; max-width: 100%; }
   border-radius: 99px;
 }
 
-/* Conquistas */
 .highlights-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1041,50 +1021,6 @@ img { display: block; max-width: 100%; }
   .highlights-grid .highlight-card:first-child { grid-column: auto; }
 }
 
-/* Bloco código na timeline */
-.code-timeline {
-  margin-top: 4rem;
-  background: var(--bg-3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.code-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1rem;
-  border-bottom: 1px solid var(--border);
-  background: rgba(0,0,0,0.2);
-}
-
-.code-dot { width: 10px; height: 10px; border-radius: 50%; }
-.code-dot.red    { background: #ff5f57; }
-.code-dot.yellow { background: #febc2e; }
-.code-dot.green  { background: #28c840; }
-
-.code-filename {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  margin-left: 0.3rem;
-  letter-spacing: 0.05em;
-}
-
-.code-body {
-  padding: 1.5rem;
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  line-height: 2;
-  overflow-x: auto;
-}
-
-.c-year   { color: var(--cyan); }
-.c-arrow  { color: var(--text-mute); }
-.c-str    { color: #a5d6ff; }
-.c-accent { color: var(--violet); font-style: italic; }
-
 /* ──────────────────────────────────────────────
    13. CERTIFICAÇÕES
    ────────────────────────────────────────────── */
@@ -1108,7 +1044,6 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 
-/* Linha esquerda ao hover */
 .cert-card::before {
   content: '';
   position: absolute;
@@ -1235,7 +1170,6 @@ img { display: block; max-width: 100%; }
   transform: translateX(3px);
 }
 
-/* Card mensagem */
 .msg-card {
   background: var(--bg-2);
   border: 1px solid var(--border);
@@ -1350,7 +1284,7 @@ img { display: block; max-width: 100%; }
 
 .back-top:hover {
   background: var(--cyan);
-  color: var(--bg);
+  color: #fff;
   box-shadow: 0 6px 20px var(--cyan-glow);
   transform: translateY(-2px);
 }

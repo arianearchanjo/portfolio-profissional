@@ -1,9 +1,9 @@
 # Ariane Archanjo — Portfolio
 
-Portfólio pessoal de desenvolvedora front-end, com design baseado na identidade visual **ariarch.dev v2**.
+Portfólio pessoal de desenvolvedora front-end, com design baseado na identidade visual **ariarch.dev v2 — red edition**.
 
 ## ✨ Destaques
-- **Identidade visual v2:** Paleta cyan `#00d4e8` + violet `#a855f7`, fundos em camadas azul-escuro e tipografia Syne + Space Mono.
+- **Identidade visual v2 red:** Paleta vermelho `#e8192c` + crimson `#b0121e`, fundos em camadas azul-escuro e tipografia Syne + Space Mono.
 - **Dark / Light Mode:** Alternância de tema com preferência salva no `localStorage`.
 - **Animações:** Reveal por scroll (Intersection Observer), barras de skill animadas, contador de stats e efeito tilt nos cards.
 - **Typed text:** Rotação automática de frases na hero section.
@@ -20,7 +20,7 @@ Portfólio pessoal de desenvolvedora front-end, com design baseado na identidade
 ## 📁 Estrutura
 ```
 ├── index.html   # Estrutura e conteúdo
-├── style.css    # Identidade visual v2 + responsividade
+├── style.css    # Identidade visual v2 red + responsividade
 └── script.js    # Interatividade (cursor, navbar, animações, typed)
 ```
 
